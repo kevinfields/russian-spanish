@@ -28,7 +28,7 @@ const CustomQuestion = (props) => {
   const [response, setResponse] = useState("");
 
   const onSubmit = (e) => {
-    if (k < 49) {
+    if (k < props.rounds) {
       k = k + 1;
     } else {
       k = 0;
@@ -142,7 +142,7 @@ const CustomQuestion = (props) => {
     }
     setResponse("");
     percent = (score / rounds) * 100;
-    if (rounds >= 50) {
+    if (rounds >= props.rounds) {
       alert(
         "Final score: " +
           score +
@@ -154,7 +154,7 @@ const CustomQuestion = (props) => {
           (percent >= 96 ? ", ладно" : null)
       );
       score = 0;
-      rounds = 0;
+      rounds = -1;
       percent = 0;
       failed = 0;
       navigate("../", { replace: true });
@@ -164,7 +164,7 @@ const CustomQuestion = (props) => {
 
   return (
     <div className="cquestioncontainer">
-      <div className="type">
+      <div className="cquestionitem">
         <form className="customform" onSubmit={onSubmit}>
           <div className="cqword">
             {props.qword === 1

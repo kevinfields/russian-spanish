@@ -124,7 +124,7 @@ body {
 
 .links {
   position: fixed;
-  right: 740px;
+  right: 1040px;
   top: 35px;
   display: flex;
   flex-direction: column;
@@ -161,9 +161,9 @@ body {
   max-height: 240px;
   font-size: 13px;
   text-align: center;
-  position: relative;
+  position: fixed;
   left: 820px;
-  top: -210px;
+  top: 210px;
   padding: 1px;
   margin: 1px;
   border-radius: 20px;
@@ -524,4 +524,13 @@ ul {
 
 .userquiz {
   color: blue;
+}
+
+.cquestionitem {
+  background-color: gray;
+  width: 300px;
+  height: 200px;
+  position: fixed;
+  left: 480px;
+  top: 100px;
 }

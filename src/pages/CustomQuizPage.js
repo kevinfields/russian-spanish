@@ -3,31 +3,35 @@ import { useContext } from "react";
 import UserWordsContext from "../store/userwords-context";
 import CustomQuestion from "../components/CustomQuestion";
 
-let aword = 1;
-let qword = 2;
-let word;
 let rounds = -1;
 let wordarray = [];
 
 const CustomQuizPage = () => {
   const wordsContext = useContext(UserWordsContext);
-  const [newWord, setNewWord] = useState(0);
+  let aword = Math.floor(Math.random() * 3) + 1;
+  let qword = Math.floor(Math.random() * 3) + 1;
 
+  const [newWord, setNewWord] = useState(0);
+  let word = wordsContext.wordlist[newWord];
+  let roundtotal = wordsContext.totalWords;
   let userArray = wordsContext.wordlist;
 
-  for (let i = wordsContext.totalWords; i > 0; i--) {
-    const j = Math.floor(Math.random() * i);
-    const temp = wordarray[i];
-    wordarray[i] = wordarray[j];
-    wordarray[j] = temp;
-  }
   console.log("wordarray1: " + wordarray);
-  if (newWord < wordsContext.totalWords) {
+  if (rounds < roundtotal - 1) {
     rounds++;
   } else {
-    rounds = 0;
+    rounds = -1;
   }
-  word = userArray[rounds];
+  if (rounds === -1) {
+    word = {
+      english: "start",
+      spanish: "start",
+      russian: "start",
+      cyrillic: "start",
+    };
+  } else {
+    word = userArray[rounds];
+  }
   console.log("rounds: " + rounds);
   console.log("word: " + word);
 
@@ -41,6 +45,7 @@ const CustomQuizPage = () => {
         qword={qword}
         aword={aword}
         onChange={(number) => setNewWord(number)}
+        rounds={roundtotal}
       />
     </div>
   );

@@ -4,24 +4,27 @@ import UserWordsContext from "../store/userwords-context";
 import CustomQuestion from "../components/CustomQuestion";
 
 let rounds = -1;
-let wordarray = [];
 
 const CustomQuizPage = () => {
   const wordsContext = useContext(UserWordsContext);
-  let aword = Math.floor(Math.random() * 3) + 1;
-  let qword = Math.floor(Math.random() * 3) + 1;
-
   const [newWord, setNewWord] = useState(0);
-  let word = wordsContext.wordlist[newWord];
   let roundtotal = wordsContext.totalWords;
+  if (rounds >= roundtotal - 1) {
+    rounds = -1;
+  } else {
+    rounds++;
+  }
+  let aword = Math.floor(Math.random() * 3) + 1;
+  let qword;
+  if (aword !== 3) {
+    qword = aword + 1;
+  } else {
+    qword = 1;
+  }
+  let word = wordsContext.wordlist[newWord];
+
   let userArray = wordsContext.wordlist;
 
-  console.log("wordarray1: " + wordarray);
-  if (rounds < roundtotal - 1) {
-    rounds++;
-  } else {
-    rounds = -1;
-  }
   if (rounds === -1) {
     word = {
       english: "start",
@@ -29,6 +32,8 @@ const CustomQuizPage = () => {
       russian: "start",
       cyrillic: "start",
     };
+    qword = 4;
+    aword = 4;
   } else {
     word = userArray[rounds];
   }

@@ -5,36 +5,42 @@ import CustomQuestion from "../components/CustomQuestion";
 
 let aword = 1;
 let qword = 2;
+let word;
+let rounds = -1;
+let wordarray = [];
 
 const CustomQuizPage = () => {
   const wordsContext = useContext(UserWordsContext);
-  const [newQuestion, setNewQuestion] = useState(0);
-  let wordarray = wordsContext.wordlist;
+  const [newWord, setNewWord] = useState(0);
 
-  for (let i = wordarray.length; i > 0; i--) {
+  let userArray = wordsContext.wordlist;
+
+  for (let i = wordsContext.totalWords; i > 0; i--) {
     const j = Math.floor(Math.random() * i);
     const temp = wordarray[i];
     wordarray[i] = wordarray[j];
     wordarray[j] = temp;
   }
-
-  let word = wordsContext.wordlist[newQuestion];
-
-  let english = word.english;
-  let spanish = word.spanish;
-  let russian = word.russian;
-  let cyrillic = word.cyrillic;
+  console.log("wordarray1: " + wordarray);
+  if (newWord < wordsContext.totalWords) {
+    rounds++;
+  } else {
+    rounds = 0;
+  }
+  word = userArray[rounds];
+  console.log("rounds: " + rounds);
+  console.log("word: " + word);
 
   return (
     <div className="userquiz">
       <CustomQuestion
-        english={english}
-        spanish={spanish}
-        russian={russian}
-        cyrillic={cyrillic}
+        english={word.english}
+        spanish={word.spanish}
+        russian={word.russian}
+        cyrillic={word.cyrillic}
         qword={qword}
         aword={aword}
-        onChange={(number) => setNewQuestion(number)}
+        onChange={(number) => setNewWord(number)}
       />
     </div>
   );

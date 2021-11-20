@@ -44,122 +44,123 @@ const CustomQuestion = (props) => {
       question = props.russian;
     }
     e.preventDefault();
+
+    correctanswerr = props.russianlatin;
+    correctanswere = props.english;
+    correctanswers = props.spanish;
+    correctcyrillic = props.russian;
+
+    if (props.aword === 1) {
+      correctanswer = props.english;
+      correctanswertype = "english";
+      if (
+        response === props.english ||
+        response === props.englishalt ||
+        response === props.englishalt2
+      ) {
+        score++;
+        failed = 1;
+      } else if (response === "setscore48") {
+        failed = 1;
+        score = score + 48;
+      } else if (response === "setscore38") {
+        failed = 1;
+        score = score + 38;
+      } else if (response === "setscore28") {
+        failed = 1;
+        score = score + 28;
+      } else if (response === "setscore18") {
+        failed = 1;
+        score = score + 18;
+      } else {
+        failed = 2;
+      }
+    }
+    if (props.aword === 2) {
+      correctanswer = props.spanish;
+      correctanswertype = "spanish";
+      if (response === props.spanish) {
+        score++;
+        failed = 1;
+      } else if (response === props.spanishalt) {
+        score++;
+
+        failed = 1;
+      } else if (response === props.spanishalt2) {
+        score++;
+
+        failed = 1;
+      } else if (response === "setscore48") {
+        failed = 1;
+        score = score + 48;
+      } else if (response === "setscore38") {
+        failed = 1;
+        score = score + 38;
+      } else if (response === "setscore28") {
+        failed = 1;
+        score = score + 28;
+      } else if (response === "setscore18") {
+        failed = 1;
+        score = score + 18;
+      } else {
+        failed = 2;
+      }
+    }
+
+    if (props.aword === 3) {
+      correctanswer = props.russianlatin;
+      correctanswertype = "cyrillic";
+      if (response === props.russianlatin) {
+        score++;
+
+        failed = 1;
+      } else if (response === props.russianlatinalt) {
+        score++;
+
+        failed = 1;
+      } else if (response === "setscore48") {
+        failed = 1;
+        score = score + 48;
+      } else if (response === "setscore38") {
+        failed = 1;
+        score = score + 38;
+      } else if (response === "setscore28") {
+        failed = 1;
+        score = score + 28;
+      } else if (response === "setscore18") {
+        failed = 1;
+        score = score + 18;
+      } else {
+        failed = 2;
+      }
+    }
+    rounds++;
+    console.log(rounds);
+    useranswer = response;
+    if (useranswer === "") {
+      useranswer = "nodataentered";
+    }
+    setResponse("");
+    percent = (score / rounds) * 100;
+    if (rounds >= 50) {
+      alert(
+        "Final score: " +
+          score +
+          "/" +
+          rounds +
+          " or " +
+          percent +
+          "%" +
+          (percent >= 96 ? ", ладно" : null)
+      );
+      score = 0;
+      rounds = 0;
+      percent = 0;
+      failed = 0;
+      navigate("../", { replace: true });
+    }
+    props.onChange(k);
   };
-  correctanswerr = props.russianlatin;
-  correctanswere = props.english;
-  correctanswers = props.spanish;
-  correctcyrillic = props.russian;
-
-  if (props.aword === 1) {
-    correctanswer = props.english;
-    correctanswertype = "english";
-    if (
-      response === props.english ||
-      response === props.englishalt ||
-      response === props.englishalt2
-    ) {
-      score++;
-      failed = 1;
-    } else if (response === "setscore48") {
-      failed = 1;
-      score = score + 48;
-    } else if (response === "setscore38") {
-      failed = 1;
-      score = score + 38;
-    } else if (response === "setscore28") {
-      failed = 1;
-      score = score + 28;
-    } else if (response === "setscore18") {
-      failed = 1;
-      score = score + 18;
-    } else {
-      failed = 2;
-    }
-  }
-  if (props.aword === 2) {
-    correctanswer = props.spanish;
-    correctanswertype = "spanish";
-    if (response === props.spanish) {
-      score++;
-      failed = 1;
-    } else if (response === props.spanishalt) {
-      score++;
-
-      failed = 1;
-    } else if (response === props.spanishalt2) {
-      score++;
-
-      failed = 1;
-    } else if (response === "setscore48") {
-      failed = 1;
-      score = score + 48;
-    } else if (response === "setscore38") {
-      failed = 1;
-      score = score + 38;
-    } else if (response === "setscore28") {
-      failed = 1;
-      score = score + 28;
-    } else if (response === "setscore18") {
-      failed = 1;
-      score = score + 18;
-    } else {
-      failed = 2;
-    }
-  }
-
-  if (props.aword === 3) {
-    correctanswer = props.russianlatin;
-    correctanswertype = "cyrillic";
-    if (response === props.russianlatin) {
-      score++;
-
-      failed = 1;
-    } else if (response === props.russianlatinalt) {
-      score++;
-
-      failed = 1;
-    } else if (response === "setscore48") {
-      failed = 1;
-      score = score + 48;
-    } else if (response === "setscore38") {
-      failed = 1;
-      score = score + 38;
-    } else if (response === "setscore28") {
-      failed = 1;
-      score = score + 28;
-    } else if (response === "setscore18") {
-      failed = 1;
-      score = score + 18;
-    } else {
-      failed = 2;
-    }
-  }
-  rounds++;
-  console.log(rounds);
-  useranswer = response;
-  if (useranswer === "") {
-    useranswer = "nodataentered";
-  }
-  setResponse("");
-  percent = (score / rounds) * 100;
-  if (rounds >= 50) {
-    alert(
-      "Final score: " +
-        score +
-        "/" +
-        rounds +
-        " or " +
-        percent +
-        "%" +
-        (percent >= 96 ? ", ладно" : null)
-    );
-    score = 0;
-    rounds = 0;
-    percent = 0;
-    failed = 0;
-    navigate("../", { replace: true });
-  }
-  props.onChange(0);
 
   return (
     <div className="cquestioncontainer">

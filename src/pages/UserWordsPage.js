@@ -10,7 +10,7 @@ const UserWordsPage = () => {
   } else {
     content = <RequestList requests={wordsContext.wordlist} />;
   }
-  console.log(wordsContext);
+  console.log("current words context: " + wordsContext);
   return (
     <section>
       <h1>User Words</h1>

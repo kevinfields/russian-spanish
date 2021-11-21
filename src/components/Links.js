@@ -11,13 +11,8 @@ const Links = () => {
             </Link>
           </p>
           <p className="path">
-            <Link className="misc" to="/latin-to-cyrillic">
-              Turn Latin to Cyrillic
-            </Link>
-          </p>
-          <p className="path">
-            <Link className="misc" to="/cyrillic-to-latin">
-              Turn Cyrillic to Latin
+            <Link className="misc" to="/transliterate">
+              Transliterator
             </Link>
           </p>
           <p className="path">

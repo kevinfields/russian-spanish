@@ -124,7 +124,7 @@ body {
 
 .links {
   position: fixed;
-  right: 1040px;
+  right: 740px;
   top: 35px;
   display: flex;
   flex-direction: column;
@@ -533,4 +533,12 @@ ul {
   position: fixed;
   left: 480px;
   top: 100px;
+}
+
+.tlhead {
+  color: white;
+}
+
+.tlspelling {
+  color: white;
 }

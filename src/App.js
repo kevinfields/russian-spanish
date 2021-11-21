@@ -5,22 +5,20 @@ import AdverbPage from "./pages/AdverbPage";
 import HomePage from "./pages/HomePage";
 import { Route, Routes } from "react-router-dom";
 import Links from "./components/Links";
-import LatinToCyrillic from "./pages/LatinToCyrillic";
-import CyrillicToLatin from "./pages/CyrillicToLatin";
 import HighScoresFrontPage from "./pages/HighScoresFrontPage";
 import HighScoresPage from "./pages/HighScoresPage";
 import SuggestionsPage from "./pages/SuggestionsPage";
 import SuggestPage from "./pages/SuggestPage";
 import UserWordsPage from "./pages/UserWordsPage";
 import CustomQuizPage from "./pages/CustomQuizPage";
+import TransliteratorPage from "./pages/TransliteratorPage";
 
 function App() {
   return (
     <section className="bigwrap">
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/latin-to-cyrillic" element={<LatinToCyrillic />} />
-        <Route path="/cyrillic-to-latin" element={<CyrillicToLatin />} />
+        <Route path="/transliterate" element={<TransliteratorPage />} />
         <Route path="/hiscores" element={<HighScoresFrontPage />} />
         <Route path="/suggestions" element={<SuggestionsPage />} />
         <Route path="/suggest" element={<SuggestPage />} />

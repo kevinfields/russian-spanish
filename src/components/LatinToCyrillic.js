@@ -109,6 +109,8 @@ const LatinToCyrillic = () => {
           latinArray[i + 2] !== "t"
         ) {
           cyrillicArray[i] = "ж";
+        } else if (next === "h" && cyrillicArray[i + 2] === "t") {
+          cyrillicArray[i] = "";
         } else {
           cyrillicArray[i] = "г";
         }
@@ -135,6 +137,8 @@ const LatinToCyrillic = () => {
           }
           cyrillicArray[i] = "";
         } else if (previous === "p" || previous === "t") {
+          cyrillicArray[i] = "";
+        } else if (previous === "g" && next === "t") {
           cyrillicArray[i] = "";
         } else {
           cyrillicArray[i] = "х";
@@ -428,11 +432,12 @@ const LatinToCyrillic = () => {
   }
   let cyrillic = cyrillicArray.join("");
   return (
-    <div className="tlmaindiv">
+    <div className="tlitem">
       <section className="input">
         <h4 className="tlhead">Latin to Cyrillic</h4>
         <textarea
-          className="tltextinput"
+          className="tlinput"
+          rows="3"
           onChange={(e) => setText(e.target.value)}
         />
       </section>

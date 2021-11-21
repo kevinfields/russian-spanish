@@ -3,7 +3,7 @@ import CyrillicToLatin from "../components/CyrillicToLatin";
 
 const TransliteratorPage = () => {
   return (
-    <div>
+    <div className="tlcontainer">
       <LatinToCyrillic />
       <p></p>
       <CyrillicToLatin />

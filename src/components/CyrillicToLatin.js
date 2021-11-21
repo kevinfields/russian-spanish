@@ -226,11 +226,12 @@ const CyrillicToLatin = () => {
   }
   let latin = latinArray.join("");
   return (
-    <div className="tlmaindiv">
+    <div className="tlitem">
       <section className="input">
         <h4 className="tlhead">Cyrillic to Latin</h4>
         <textarea
-          className="textinput"
+          className="tlinput"
+          rows="3"
           onChange={(e) => setText(e.target.value)}
         />
       </section>

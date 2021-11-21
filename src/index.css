@@ -124,7 +124,7 @@ body {
 
 .links {
   position: fixed;
-  right: 740px;
+  right: 1040px;
   top: 35px;
   display: flex;
   flex-direction: column;
@@ -541,4 +541,26 @@ ul {
 
 .tlspelling {
   color: white;
+  inline-size: 200px;
+  overflow-wrap: break-word;
+}
+
+.tlinput {
+  max-lines: 3;
+  margin: 5px;
+}
+
+.tlitem {
+  border: 2px solid yellow;
+  border-radius: 4px;
+  box-shadow: 1px 1px orange;
+}
+
+.tlcontainer {
+  width: 340px;
+  position: relative;
+  left: 450px;
+  top: 50px;
+  display: flex;
+  padding: 10px;
 }

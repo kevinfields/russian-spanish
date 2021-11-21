@@ -151,7 +151,7 @@ const CustomQuestion = (props) => {
           " or " +
           percent +
           "%" +
-          (percent >= 96 ? ", ладно" : null)
+          (percent >= 96 ? ", ладно" : "")
       );
       score = 0;
       rounds = -1;

@@ -3,40 +3,53 @@ import { useContext } from "react";
 import UserWordsContext from "../store/userwords-context";
 import CustomQuestion from "../components/CustomQuestion";
 
-let rounds = -1;
+let rounds = 0;
 
 const CustomQuizPage = () => {
+  const [newWord, setNewWord] = useState(-1);
   const wordsContext = useContext(UserWordsContext);
-  const [newWord, setNewWord] = useState(0);
-  let roundtotal = wordsContext.totalWords;
-  if (rounds >= roundtotal - 1) {
-    rounds = -1;
+  let roundtotal = wordsContext.totalWords + 1;
+  let word = wordsContext.wordlist[newWord];
+
+  if (newWord === -1) {
+    word = {
+      english: "Press Enter to Start",
+      spanish: "",
+      russian: "",
+      cyrillic: "",
+    };
+  }
+
+  if (wordsContext.totalWords <= 1) {
+    word = {
+      english: "Please select some words from the Custom Word List Page.",
+      spanish: "",
+      russian: "",
+      cyrillic: "",
+    };
+  }
+
+  if (rounds >= roundtotal) {
+    rounds = 0;
   } else {
     rounds++;
   }
+
   let aword = Math.floor(Math.random() * 3) + 1;
+
   let qword;
+
   if (aword !== 3) {
     qword = aword + 1;
   } else {
     qword = 1;
   }
-  let word = wordsContext.wordlist[newWord];
 
-  let userArray = wordsContext.wordlist;
-
-  if (rounds === -1) {
-    word = {
-      english: "start",
-      spanish: "start",
-      russian: "start",
-      cyrillic: "start",
-    };
+  if (newWord === -1) {
     qword = 4;
     aword = 4;
-  } else {
-    word = userArray[rounds];
   }
+
   console.log("rounds: " + rounds);
   console.log("word: " + word);
 

@@ -32,18 +32,7 @@ export function UserWordsContextProvider(props) {
     removeWord: removeWordHandler,
     wordStatus: wordStatusHandler,
   };
-  if (context.totalWords === 0) {
-    context.addWord({
-      id: "placeholderword",
-      english: "Please select some words from the All Custom Words Page",
-      spanish: "",
-      russian: "",
-      cyrillic: "",
-      wordType: "",
-    });
-  } else if (context.totalWords > 1 && context.wordStatus("placeholderword")) {
-    context.removeWord("placeholderword");
-  }
+
   return (
     <UserWordsContext.Provider value={context}>
       {props.children}

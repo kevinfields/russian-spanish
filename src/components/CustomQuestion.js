@@ -3,7 +3,7 @@ import FailureMessage from "./FailureMessage";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
-let rounds = -1;
+let rounds = 0;
 let score = 0;
 let percent = 0;
 let k = 0;
@@ -19,31 +19,36 @@ let correctcyrillic;
 
 const CustomQuestion = (props) => {
   const navigate = useNavigate();
-  if (props.qword === 4) {
-    score = 0;
-    rounds = -1;
-    percent = 0;
-    failed = 0;
-  }
   const [response, setResponse] = useState("");
 
-  const onSubmit = (e) => {
-    if (k < props.rounds) {
-      k = k + 1;
-    } else {
-      k = 0;
-    }
+  if (props.qword === 4) {
+    score = 0;
+    rounds = 0;
+    percent = 0;
+    failed = 0;
+    k = 0;
+  }
 
-    if (props.qword === 1) {
-      question = props.english;
-    }
-    if (props.qword === 2) {
-      question = props.spanish;
-    }
-    if (props.qword === 3) {
-      question = props.russian;
-    }
+  const onSubmit = (e) => {
     e.preventDefault();
+
+    switch (props.qword) {
+      case 1:
+        question = props.english;
+        break;
+      case 2:
+        question = props.spanish;
+        break;
+      case 3:
+        question = props.russian;
+        break;
+      case 4:
+        question = "";
+        break;
+      default:
+        question = props.english;
+        break;
+    }
 
     correctanswerr = props.russianlatin;
     correctanswere = props.english;
@@ -51,13 +56,11 @@ const CustomQuestion = (props) => {
     correctcyrillic = props.russian;
 
     if (props.aword === 1) {
+      rounds++;
+      k++;
       correctanswer = props.english;
       correctanswertype = "english";
-      if (
-        response === props.english ||
-        response === props.englishalt ||
-        response === props.englishalt2
-      ) {
+      if (response === props.english) {
         score++;
         failed = 1;
       } else if (response === "setscore48") {
@@ -77,18 +80,12 @@ const CustomQuestion = (props) => {
       }
     }
     if (props.aword === 2) {
+      rounds++;
+      k++;
       correctanswer = props.spanish;
       correctanswertype = "spanish";
       if (response === props.spanish) {
         score++;
-        failed = 1;
-      } else if (response === props.spanishalt) {
-        score++;
-
-        failed = 1;
-      } else if (response === props.spanishalt2) {
-        score++;
-
         failed = 1;
       } else if (response === "setscore48") {
         failed = 1;
@@ -108,15 +105,12 @@ const CustomQuestion = (props) => {
     }
 
     if (props.aword === 3) {
+      rounds++;
+      k++;
       correctanswer = props.russianlatin;
       correctanswertype = "cyrillic";
       if (response === props.russianlatin) {
         score++;
-
-        failed = 1;
-      } else if (response === props.russianlatinalt) {
-        score++;
-
         failed = 1;
       } else if (response === "setscore48") {
         failed = 1;
@@ -134,7 +128,7 @@ const CustomQuestion = (props) => {
         failed = 2;
       }
     }
-    rounds++;
+
     console.log(rounds);
     useranswer = response;
     if (useranswer === "") {
@@ -142,7 +136,7 @@ const CustomQuestion = (props) => {
     }
     setResponse("");
     percent = (score / rounds) * 100;
-    if (rounds >= props.rounds) {
+    if (rounds >= props.rounds - 1) {
       alert(
         "Final score: " +
           score +
@@ -154,9 +148,11 @@ const CustomQuestion = (props) => {
           (percent >= 96 ? ", ладно" : "")
       );
       score = 0;
-      rounds = -1;
+      rounds = 0;
       percent = 0;
       failed = 0;
+      k = -1;
+      props.onChange(-1);
       navigate("../", { replace: true });
     }
     props.onChange(k);
@@ -173,7 +169,9 @@ const CustomQuestion = (props) => {
               ? props.spanish
               : props.qword === 3
               ? props.russian
-              : props.english}
+              : props.qword === 4
+              ? ""
+              : ""}
           </div>
           <div className="aword">
             {props.aword === 1

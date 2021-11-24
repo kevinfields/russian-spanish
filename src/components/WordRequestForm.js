@@ -16,11 +16,11 @@ const WordRequest = (props) => {
     const enteredWordType = wordTypeInputRef.current.value;
 
     const wordData = {
-      english: enteredEnglish,
-      spanish: enteredSpanish,
-      russian: enteredRussian,
-      cyrillic: enteredCyrillic,
-      wordType: enteredWordType,
+      english: enteredEnglish.toLowerCase(),
+      spanish: enteredSpanish.toLowerCase(),
+      russian: enteredRussian.toLowerCase(),
+      cyrillic: enteredCyrillic.toLowerCase(),
+      wordType: enteredWordType.toLowerCase(),
     };
     props.onAddWord(wordData);
   };

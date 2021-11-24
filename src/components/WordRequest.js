@@ -1,13 +1,17 @@
 import Card from "../interface/Card";
 import { useContext } from "react";
 import UserWordsContext from "../store/userwords-context";
+import { useState } from "react";
 
 const WordRequest = (props) => {
   const wordCtx = useContext(UserWordsContext);
   const wordStatus = wordCtx.wordStatus(props.id);
+  const [altClass, setAltClass] = useState(false);
+
   const toggleWordStatusHandler = () => {
     if (wordStatus) {
       wordCtx.removeWord(props.id);
+      setAltClass(false);
     } else {
       wordCtx.addWord({
         id: props.id,
@@ -17,11 +21,12 @@ const WordRequest = (props) => {
         cyrillic: props.cyrillic,
         wordType: props.wordType,
       });
+      setAltClass(true);
       console.log(props.id);
     }
   };
   return (
-    <div className="requestlistitem">
+    <div className={altClass ? "checkedrequest" : "requestlistitem"}>
       <Card>
         <section className="requestcontainer">
           <div>

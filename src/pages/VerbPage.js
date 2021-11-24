@@ -478,8 +478,7 @@ const VerbPage = (props) => {
       spanish: "encontrar",
       spanishalt: "hallar",
       spanishalt2: "descubrir",
-      russianlatin: "iskat",
-      russianlatinalt: "nayti",
+      russianlatin: "nayti",
       level: 1,
     };
   }
@@ -795,8 +794,8 @@ const VerbPage = (props) => {
     verb = {
       english: "use",
       spanish: "usar",
-      russian: "использовать",
-      russianlatin: "ispolzovat",
+      russian: "утилизировать",
+      russianlatin: "utilizirovat",
       level: 2,
     };
   }
@@ -1007,8 +1006,460 @@ const VerbPage = (props) => {
       level: 2,
     };
   }
+  if (newVerb === 101) {
+    verb = {
+      english: "yell",
+      spanish: "gritar",
+      russian: "кричать",
+      russianlatin: "krichat",
+      level: 3,
+    };
+  }
+  if (newVerb === 102) {
+    verb = {
+      english: "dress",
+      spanish: "vestir",
+      russian: "одеваться",
+      russianlatin: "odevatsya",
+      level: 3,
+    };
+  }
+  if (newVerb === 103) {
+    verb = {
+      english: "connect",
+      spanish: "conectar",
+      russian: "соединить",
+      russianlatin: "soyedinit",
+      level: 3,
+    };
+  }
+  if (newVerb === 104) {
+    verb = {
+      english: "fix",
+      spanish: "arreglar",
+      russian: "чинить",
+      russianlatin: "chinit",
+      level: 3,
+    };
+  }
+  if (newVerb === 105) {
+    verb = {
+      english: "regret",
+      spanish: "lamentar",
+      russian: "сожалеть",
+      russianlatin: "sozhalet",
+      level: 3,
+    };
+  }
+  if (newVerb === 106) {
+    verb = {
+      english: "crawl",
+      spanish: "gatear",
+      russian: "ползти",
+      russianlatin: "polzti",
+      level: 3,
+    };
+  }
+  if (newVerb === 107) {
+    verb = {
+      english: "sneak",
+      spanish: "escabullirse",
+      russian: "красться",
+      russianlatin: "krastsya",
+      level: 3,
+    };
+  }
+  if (newVerb === 108) {
+    verb = {
+      english: "smoke",
+      spanish: "fumar",
+      russian: "курить",
+      russianlatin: "kurit",
+      level: 3,
+    };
+  }
+  if (newVerb === 109) {
+    verb = {
+      english: "drink",
+      spanish: "beber",
+      russian: "пить",
+      russianlatin: "pit",
+      level: 3,
+    };
+  }
+  if (newVerb === 110) {
+    verb = {
+      english: "wander",
+      englishalt: "roam",
+      spanish: "andar",
+      russian: "бродить",
+      russianlatin: "brodit",
+      level: 3,
+    };
+  }
+  if (newVerb === 111) {
+    verb = {
+      english: "punch",
+      spanish: "golpear",
+      russian: "бить",
+      russianlatin: "bit",
+      level: 3,
+    };
+  }
+  if (newVerb === 112) {
+    verb = {
+      english: "disappear",
+      spanish: "desaparecer",
+      russian: "исчезнуть",
+      russianlatin: "izchesnut",
+      level: 3,
+    };
+  }
+  if (newVerb === 113) {
+    verb = {
+      english: "suppose",
+      spanish: "suponer",
+      russian: "предполагать",
+      russianlatin: "predpolagat",
+      level: 3,
+    };
+  }
+  if (newVerb === 114) {
+    verb = {
+      english: "employ",
+      spanish: "emplear",
+      russian: "использовать",
+      russianlatin: "ispolzovat",
+      level: 3,
+    };
+  }
+  if (newVerb === 115) {
+    verb = {
+      english: "explain",
+      spanish: "explicar",
+      russian: "объяснять",
+      russianlatin: "obyasnyat",
+      level: 3,
+    };
+  }
+  if (newVerb === 116) {
+    verb = {
+      english: "power",
+      spanish: "prender",
+      russian: "властвовать",
+      russianlatin: "vlastvovat",
+      level: 3,
+    };
+  }
+  if (newVerb === 117) {
+    verb = {
+      english: "cure",
+      spanish: "curar",
+      russian: "исцелить",
+      russianlatin: "islechit",
+      level: 3,
+    };
+  }
+  if (newVerb === 118) {
+    verb = {
+      english: "heal",
+      spanish: "sanar",
+      russian: "лечить",
+      russianlatin: "lechit",
+      level: 3,
+    };
+  }
+  if (newVerb === 119) {
+    verb = {
+      english: "hurt",
+      spanish: "herir",
+      russian: "ранить",
+      russianlatin: "ranit",
+      level: 3,
+    };
+  }
+  if (newVerb === 120) {
+    verb = {
+      english: "tie",
+      spanish: "atar",
+      russian: "связать",
+      russianlatin: "svyazat",
+      level: 3,
+    };
+  }
+  if (newVerb === 121) {
+    verb = {
+      english: "separate",
+      spanish: "separar",
+      russian: "разделять",
+      russianlatin: "pazdelyat",
+      level: 3,
+    };
+  }
+  if (newVerb === 122) {
+    verb = {
+      english: "cause",
+      spanish: "causar",
+      russian: "вызывать",
+      russianlatin: "vyzyvat",
+      level: 3,
+    };
+  }
+  if (newVerb === 123) {
+    verb = {
+      english: "owe",
+      spanish: "deber",
+      russian: "должен",
+      russianlatin: "dolzhen",
+      level: 3,
+    };
+  }
+  if (newVerb === 124) {
+    verb = {
+      english: "perform",
+      spanish: "ejecutar",
+      russian: "выполнять",
+      russianlatin: "vypolnyat",
+      level: 3,
+    };
+  }
+  if (newVerb === 125) {
+    verb = {
+      english: "impair",
+      spanish: "perjudicar",
+      russian: "ухудшать",
+      russianlatin: "ukhudshat",
+      level: 3,
+    };
+  }
+  if (newVerb === 126) {
+    verb = {
+      english: "war",
+      spanish: "guerrear",
+      russian: "воевать",
+      russianlatin: "voyevat",
+      level: 3,
+    };
+  }
+  if (newVerb === 127) {
+    verb = {
+      english: "compete",
+      spanish: "competir",
+      russian: "завершить",
+      russianlatin: "zavershit",
+      level: 3,
+    };
+  }
+  if (newVerb === 128) {
+    verb = {
+      english: "laugh",
+      spanish: "reir",
+      russian: "смеяться",
+      russianlatin: "smeyatsya",
+      level: 3,
+    };
+  }
+  if (newVerb === 129) {
+    verb = {
+      english: "smile",
+      spanish: "sonreir",
+      russian: "улыбаться",
+      russianlatin: "ulybatsya",
+      level: 3,
+    };
+  }
+  if (newVerb === 130) {
+    verb = {
+      english: "whisper",
+      spanish: "susrrar",
+      russian: "шептать",
+      russianlatin: "sheptat",
+      level: 3,
+    };
+  }
+  if (newVerb === 131) {
+    verb = {
+      english: "add",
+      spanish: "agregar",
+      russian: "добавить",
+      russianlatin: "dobavit",
+      level: 3,
+    };
+  }
+  if (newVerb === 132) {
+    verb = {
+      english: "subtract",
+      spanish: "restar",
+      russian: "вычесть",
+      russianlatin: "vychest",
+      level: 3,
+    };
+  }
+  if (newVerb === 133) {
+    verb = {
+      english: "multiply",
+      spanish: "multiplicar",
+      russian: "умножить",
+      russianlatin: "umnozhit",
+      level: 3,
+    };
+  }
+  if (newVerb === 134) {
+    verb = {
+      english: "divide",
+      spanish: "dividir",
+      russian: "делить",
+      russianlatin: "delit",
+      level: 3,
+    };
+  }
+  if (newVerb === 135) {
+    verb = {
+      english: "join",
+      spanish: "unir",
+      russian: "присоединиться",
+      russianlatin: "prisoyedinitsya",
+      level: 3,
+    };
+  }
+  if (newVerb === 136) {
+    verb = {
+      english: "wash",
+      spanish: "lavar",
+      russian: "мыть",
+      russianlatin: "myt",
+      level: 3,
+    };
+  }
+  if (newVerb === 137) {
+    verb = {
+      english: "search",
+      spanish: "buscar",
+      russian: "искать",
+      russianlatin: "iskat",
+      level: 3,
+    };
+  }
+  if (newVerb === 138) {
+    verb = {
+      english: "translate",
+      spanish: "traducir",
+      russian: "переводить",
+      russianlatin: "perevodit",
+      level: 3,
+    };
+  }
+  if (newVerb === 139) {
+    verb = {
+      english: "hum",
+      spanish: "tararear",
+      russian: "напевать",
+      russianlatin: "napevat",
+      level: 3,
+    };
+  }
+  if (newVerb === 140) {
+    verb = {
+      english: "present",
+      spanish: "presentar",
+      russian: "представлять",
+      russianlatin: "predstavlyat",
+      level: 3,
+    };
+  }
+  if (newVerb === 141) {
+    verb = {
+      english: "offer",
+      spanish: "ofrecer",
+      russian: "предлагать",
+      russianlatin: "predlagat",
+      level: 3,
+    };
+  }
+  if (newVerb === 142) {
+    verb = {
+      english: "buy",
+      spanish: "comprar",
+      russian: "покупать",
+      russianlatin: "pokupat",
+      level: 3,
+    };
+  }
+  if (newVerb === 143) {
+    verb = {
+      english: "travel",
+      spanish: "viajar",
+      russian: "путешествовать",
+      russianlatin: "puteshestvovat",
+      level: 3,
+    };
+  }
+  if (newVerb === 144) {
+    verb = {
+      english: "hunt",
+      spanish: "cazar",
+      russian: "охотиться",
+      russianlatin: "okhotitsya",
+      level: 3,
+    };
+  }
+  if (newVerb === 145) {
+    verb = {
+      english: "record",
+      spanish: "grabar",
+      russian: "записать",
+      russianlatin: "zapisat",
+      level: 3,
+    };
+  }
+  if (newVerb === 146) {
+    verb = {
+      english: "entertain",
+      spanish: "entrentener",
+      russian: "развлекать",
+      russianlatin: "razvlekat",
+      level: 3,
+    };
+  }
+  if (newVerb === 147) {
+    verb = {
+      english: "cover",
+      spanish: "cubrir",
+      russian: "покрывать",
+      russianlatin: "pokryvat",
+      level: 3,
+    };
+  }
+  if (newVerb === 148) {
+    verb = {
+      english: "finish",
+      spanish: "terminar",
+      russian: "заканчивать",
+      russianlatin: "zakanchivat",
+      level: 3,
+    };
+  }
+  if (newVerb === 149) {
+    verb = {
+      english: "overcome",
+      spanish: "superar",
+      russian: "преодолеть",
+      russianlatin: "preodolet",
+      level: 3,
+    };
+  }
+  if (newVerb === 150) {
+    verb = {
+      english: "gather",
+      spanish: "recoger",
+      spanishalt: "reunir",
+      russian: "собирать",
+      russianlatin: "sobirat",
+      level: 3,
+    };
+  }
 
-  if (newVerb > 100 && newVerb < 151) {
+  if (newVerb >= 151) {
     verb = {
       english: "",
       russian: "",

@@ -1001,17 +1001,7 @@ const NounPage = (props) => {
     };
   }
 
-  console.log("English: " + noun.english);
-  console.log("Spanish: " + noun.spanish);
-  console.log("English Alt: " + noun.englishalt);
-  console.log("English Alt 2: " + noun.englishalt2);
-  console.log("Spanish Alt: " + noun.spanishalt);
-  console.log("Spanish Alt 2: " + noun.spanishalt2);
-  console.log("Russian: " + noun.russian);
-  console.log("Latinized Russian: " + noun.russianlatin);
-  console.log("Latinized Russian Alt: " + noun.russianlatinalt);
-  console.log("Level: " + noun.level);
-  console.log("-------------------------------------------");
+
   return (
     <div>
       <div>

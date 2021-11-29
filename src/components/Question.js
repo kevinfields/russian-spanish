@@ -41,10 +41,6 @@ for (let m = hardarray.length - 1; m > 0; m--) {
   hardarray[n] = temp;
 }
 
-console.log(easyarray);
-console.log(mediumarray);
-console.log(hardarray);
-
 let rounds = -1;
 let score = 0;
 let percent = 0;
@@ -132,88 +128,87 @@ const Question = (props) => {
     if (props.aword === 1) {
       correctanswer = props.english;
       correctanswertype = "english";
-      if (
-        response === props.english ||
-        response === props.englishalt ||
-        response === props.englishalt2
-      ) {
-        score++;
-        failed = 1;
-      } else if (response === "setscore48") {
-        failed = 1;
-        score = score + 48;
-      } else if (response === "setscore38") {
-        failed = 1;
-        score = score + 38;
-      } else if (response === "setscore28") {
-        failed = 1;
-        score = score + 28;
-      } else if (response === "setscore18") {
-        failed = 1;
-        score = score + 18;
-      } else {
-        failed = 2;
+      failed = 1;
+      switch (response) {
+        case props.english || props.englishalt || props.englishalt2:
+          score++;
+          break;
+        case "setscore48":
+          score = score + 48;
+          break;
+        case "setscore38":
+          score = score + 38;
+          break;
+        case "setscore28":
+          score = score + 28;
+          break;
+        case "setscore18":
+          score = score + 18;
+          break;
+        default:
+          failed = 2;
+          break;
       }
     }
     if (props.aword === 2) {
       correctanswer = props.spanish;
       correctanswertype = "spanish";
-      if (response === props.spanish) {
-        score++;
-        failed = 1;
-      } else if (response === props.spanishalt) {
-        score++;
-
-        failed = 1;
-      } else if (response === props.spanishalt2) {
-        score++;
-
-        failed = 1;
-      } else if (response === "setscore48") {
-        failed = 1;
-        score = score + 48;
-      } else if (response === "setscore38") {
-        failed = 1;
-        score = score + 38;
-      } else if (response === "setscore28") {
-        failed = 1;
-        score = score + 28;
-      } else if (response === "setscore18") {
-        failed = 1;
-        score = score + 18;
-      } else {
-        failed = 2;
+      failed = 1;
+      switch (response) {
+        case props.spanish:
+          score++;
+          break;
+        case props.spanishalt:
+          score++;
+          break;
+        case props.spanishalt2:
+          score++;
+          break;
+        case "setscore48":
+          score = score + 48;
+          break;
+        case "setscore38":
+          score = score + 38;
+          break;
+        case "setscore28":
+          score = score + 28;
+          break;
+        case "setscore18":
+          score = score + 18;
+          break;
+        default:
+          failed = 2;
+          break;
       }
     }
-
     if (props.aword === 3) {
       correctanswer = props.russianlatin;
       correctanswertype = "cyrillic";
-      if (response === props.russianlatin) {
-        score++;
-
-        failed = 1;
-      } else if (response === props.russianlatinalt) {
-        score++;
-
-        failed = 1;
-      } else if (response === "setscore48") {
-        failed = 1;
-        score = score + 48;
-      } else if (response === "setscore38") {
-        failed = 1;
-        score = score + 38;
-      } else if (response === "setscore28") {
-        failed = 1;
-        score = score + 28;
-      } else if (response === "setscore18") {
-        failed = 1;
-        score = score + 18;
-      } else {
-        failed = 2;
+      failed = 1;
+      switch (response) {
+        case props.russianlatin:
+          score++;
+          break;
+        case props.russianlatinalt:
+          score++;
+          break;
+        case "setscore48":
+          score = score + 48;
+          break;
+        case "setscore38":
+          score = score + 38;
+          break;
+        case "setscore28":
+          score = score + 28;
+          break;
+        case "setscore18":
+          score = score + 18;
+          break;
+        default:
+          failed = 2;
+          break;
       }
     }
-
     rounds++;
     useranswer = response;
     if (useranswer === "") {
@@ -230,7 +225,7 @@ const Question = (props) => {
           " or " +
           percent +
           "%" +
-          (percent >= 96 ? ", ладно" : null)
+          (percent >= 96 ? ", ладно" : "")
       );
       if (score > 40) {
         highscore = true;

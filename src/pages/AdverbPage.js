@@ -574,17 +574,7 @@ const AdverbPage = (props) => {
     };
   }
 
-  console.log("English: " + adverb.english);
-  console.log("Spanish: " + adverb.spanish);
-  console.log("English Alt: " + adverb.englishalt);
-  console.log("English Alt 2: " + adverb.englishalt2);
-  console.log("Spanish Alt: " + adverb.spanishalt);
-  console.log("Spanish Alt 2: " + adverb.spanishalt2);
-  console.log("Russian: " + adverb.russian);
-  console.log("Latinized Russian: " + adverb.russianlatin);
-  console.log("Latinized Russian Alt: " + adverb.russianlatinalt);
-  console.log("Level: " + adverb.level);
-  console.log("-------------------------------------------");
+
 
   return (
     <div>

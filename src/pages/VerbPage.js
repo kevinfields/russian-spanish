@@ -1469,18 +1469,6 @@ const VerbPage = (props) => {
     };
   }
 
-  console.log("English: " + verb.english);
-  console.log("Spanish: " + verb.spanish);
-  console.log("English Alt: " + verb.englishalt);
-  console.log("English Alt 2: " + verb.englishalt2);
-  console.log("Spanish Alt: " + verb.spanishalt);
-  console.log("Spanish Alt 2: " + verb.spanishalt2);
-  console.log("Russian: " + verb.russian);
-  console.log("Latinized Russian: " + verb.russianlatin);
-  console.log("Latinized Russian Alt: " + verb.russianlatinalt);
-  console.log("Level: " + verb.level);
-  console.log("-------------------------------------------");
-
   return (
     <div>
       <div>

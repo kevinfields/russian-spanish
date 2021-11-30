@@ -556,12 +556,15 @@ const AdjectivePage = (props) => {
       break;
     default:
       adj = {
-        english: "",
-        russian: "",
+        english: " ",
+        russian: " ",
         spanish: "",
-        russianlatin: "",
-        level: "",
+        russianlatin: " ",
+        level: 2,
       };
+      if (newAdj > 100) {
+        adj.level = 3;
+      }
       break;
   }
 

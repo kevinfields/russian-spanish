@@ -994,10 +994,10 @@ const NounPage = (props) => {
       break;
     default:
       noun = {
-        english: "",
-        russian: "",
-        spanish: "",
-        russianlatin: "",
+        english: " ",
+        russian: " ",
+        spanish: " ",
+        russianlatin: " ",
         level: 3,
       };
   }

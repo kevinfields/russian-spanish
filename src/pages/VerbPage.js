@@ -1462,10 +1462,10 @@ const VerbPage = (props) => {
 
     default:
       verb = {
-        english: "",
-        russian: "",
-        spanish: "",
-        russianlatin: "",
+        english: " ",
+        russian: " ",
+        spanish: " ",
+        russianlatin: " ",
         level: 3,
       };
       break;

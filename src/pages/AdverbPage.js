@@ -48,533 +48,527 @@ const AdverbPage = (props) => {
     aadverb = Math.floor(Math.random() * 2) + 1;
   }
 
-  if (newAdverb === -2) {
-    qadverb = 4;
-    aadverb = 4;
-    adverb = {
-      english: "Adverbs / Наречия (Hard)",
-      level: 3,
-    };
+  switch (newAdverb) {
+    case -2:
+      qadverb = 4;
+      aadverb = 4;
+      adverb = {
+        english: "Adverbs / Наречия (Hard)",
+        level: 3,
+      };
+      break;
+    case -1:
+      qadverb = 4;
+      aadverb = 4;
+      adverb = {
+        english: "Adverbs / Наречия (Medium)",
+        level: 2,
+      };
+      break;
+    case 0:
+      qadverb = 4;
+      aadverb = 4;
+      adverb = {
+        english: "Adverbs / Наречия (Easy)",
+        level: 1,
+      };
+      break;
+    case 1:
+      adverb = {
+        english: "go",
+        russian: "идти",
+        russianlatin: "idti",
+        spanish: "ir",
+        level: 1,
+      };
+      break;
+    case 2:
+      adverb = {
+        english: "be",
+        russian: "быть",
+        russianlatin: "byut",
+        spanish: "estar",
+        spanishalt: "ser",
+        level: 1,
+      };
+      break;
+    case 3:
+      adverb = {
+        english: "have",
+        russian: "иметь",
+        russianlatin: "imet",
+        spanish: "tener",
+        level: 1,
+      };
+      break;
+    case 4:
+      adverb = {
+        english: "do",
+        englishalt: "make",
+        spanish: "hacer",
+        russian: "делать",
+        russianlatin: "delat",
+        level: 1,
+      };
+      break;
+    case 5:
+      adverb = {
+        english: "take",
+        russian: "брать",
+        spanish: "tocar",
+        russianlatin: "brat",
+        level: 1,
+      };
+      break;
+    case 6:
+      adverb = {
+        english: "give",
+        russian: "давaть",
+        spanish: "dar",
+        russianlatin: "davat",
+        level: 1,
+      };
+      break;
+    case 7:
+      adverb = {
+        english: "can",
+        englishalt: "be able",
+        russian: "мочь",
+        spanish: "poder",
+        russianlatin: "mohch",
+        level: 1,
+      };
+      break;
+    case 8:
+      adverb = {
+        english: "think",
+        russian: "думать",
+        spanish: "pensar",
+        russianlatin: "dumat",
+        level: 1,
+      };
+      break;
+    case 9:
+      adverb = {
+        english: "say",
+        russian: "говорить/сказать",
+        spanish: "decir",
+        russianlatin: "govorit",
+        russianlatinalt: "skazat",
+        level: 1,
+      };
+      break;
+    case 10:
+      adverb = {
+        english: "know",
+        russian: "знать",
+        spanish: "conocer",
+        spanishalt: "saber",
+        russianlatin: "znat",
+        level: 1,
+      };
+      break;
+    case 11:
+      adverb = {
+        english: "eat",
+        russian: "есть",
+        spanish: "comer",
+        russianlatin: "yest",
+        level: 1,
+      };
+      break;
+    case 12:
+      adverb = {
+        english: "want",
+        russian: "хотеть",
+        spanish: "querer",
+        russianlatin: "khotet",
+        level: 1,
+      };
+      break;
+    case 13:
+      adverb = {
+        english: "see",
+        russian: "видеть",
+        spanish: "ver",
+        russianlatin: "videt",
+        level: 1,
+      };
+      break;
+    case 14:
+      adverb = {
+        english: "live",
+        russian: "жить",
+        spanish: "vivir",
+        russianlatin: "zhit",
+        level: 1,
+      };
+      break;
+    case 15:
+      adverb = {
+        english: "become",
+        russian: "стать / становиться",
+        spanish: "convertirse",
+        russianlatin: "stat",
+        russianlatinalt: "stanovitsya",
+        level: 1,
+      };
+      break;
+    case 16:
+      adverb = {
+        english: "stay",
+        russian: "остаться",
+        spanish: "quedar",
+        russianlatin: "ostatsya",
+        level: 1,
+      };
+      break;
+    case 17:
+      adverb = {
+        english: "wait",
+        russian: "ждать",
+        spanish: "esperar",
+        russianlatin: "zhdat",
+        level: 1,
+      };
+      break;
+    case 18:
+      adverb = {
+        english: "mean",
+        englishalt: "signify",
+        russian: "значить",
+        spanish: "significar",
+        russianlatin: "znachit",
+        level: 1,
+      };
+      break;
+    case 19:
+      adverb = {
+        english: "work",
+        russian: "работать",
+        spanish: "trabajar",
+        russianlatin: "rabotat",
+        level: 1,
+      };
+      break;
+    case 20:
+      adverb = {
+        english: "love",
+        russian: "любить",
+        spanish: "amar",
+        russianlatin: "lyubit",
+        level: 1,
+      };
+      break;
+    case 21:
+      adverb = {
+        english: "hate",
+        russian: "ненавидеть",
+        spanish: "odiar",
+        russianlatin: "nenavidet",
+        level: 1,
+      };
+      break;
+    case 22:
+      adverb = {
+        english: "come",
+        englishalt: "arrive",
+        russian: "приходить",
+        spanish: "venir",
+        russianlatin: "prikhodit",
+        level: 1,
+      };
+      break;
+    case 23:
+      adverb = {
+        english: "write",
+        russian: "писать",
+        spanish: "escribir",
+        russianlatin: "pisat",
+        level: 1,
+      };
+      break;
+    case 24:
+      adverb = {
+        english: "need",
+        russian: "нуждаться",
+        spanish: "necesitar",
+        russianlatin: "nuzhdatsya",
+        level: 1,
+      };
+      break;
+    case 25:
+      adverb = {
+        english: "return",
+        russian: "возвращаться",
+        spanish: "volver",
+        russianlatin: "vozvrashchatsya",
+        russianlatinalt: "vozvrashatsya",
+        level: 1,
+      };
+      break;
+    case 26:
+      adverb = {
+        english: "seem",
+        englishalt: "appear",
+        russian: "казаться",
+        spanish: "aparecer",
+        spanishalt: "parecer",
+        russianlatin: "kazatsya",
+        level: 1,
+      };
+      break;
+    case 27:
+      adverb = {
+        english: "lay",
+        englishalt: "lie",
+        russian: "лежать",
+        spanish: "acostar",
+        russianlatin: "leyzhat",
+        russianlatinalt: "layzhat",
+        level: 1,
+      };
+      break;
+    case 28:
+      adverb = {
+        english: "remember",
+        russian: "помнить",
+        spanish: "recordar",
+        russianlatin: "pomnit",
+        level: 1,
+      };
+      break;
+    case 29:
+      adverb = {
+        english: "ask",
+        russian: "спрашивать",
+        spanish: "pedir",
+        russianlatin: "sprashivat",
+        level: 1,
+      };
+      break;
+    case 30:
+      adverb = {
+        english: "answer",
+        englishalt: "reply",
+        russian: "отвечать",
+        spanish: "responder",
+        russianlatin: "otvechat",
+        level: 1,
+      };
+      break;
+    case 31:
+      adverb = {
+        english: "walk",
+        russian: "ходить",
+        spanish: "caminar",
+        russianlatin: "khodit",
+        level: 1,
+      };
+      break;
+    case 32:
+      adverb = {
+        english: "understand",
+        englishalt: "realize",
+        russian: "понимать",
+        spanish: "comprender",
+        spanishalt: "darse cuenta",
+        russianlatin: "ponimat",
+        level: 1,
+      };
+      break;
+    case 33:
+      adverb = {
+        english: "get",
+        englishalt: "receive",
+        englishalt2: "obtain",
+        russian: "получать",
+        spanish: "obtener",
+        spanishalt: "recibir",
+        russianlatin: "poluchat",
+        level: 1,
+      };
+      break;
+    case 34:
+      adverb = {
+        english: "count",
+        englishalt: "consider",
+        russian: "считать",
+        spanish: "considerar",
+        spanishalt: "contar",
+        russianlatin: "schitat",
+        level: 1,
+      };
+      break;
+    case 35:
+      adverb = {
+        english: "stand",
+        englishalt: "rise",
+        englishalt2: "wake up",
+        russian: "стоять",
+        spanish: "levantar",
+        spanishalt: "parar",
+        russianlatin: "stoyat",
+        level: 1,
+      };
+      break;
+    case 36:
+      adverb = {
+        english: "learn",
+        russian: "узнать / учить",
+        spanish: "aprender",
+        russianlatin: "uznat",
+        russianlatinalt: "uchit",
+        level: 1,
+      };
+      break;
+    case 37:
+      adverb = {
+        english: "solve",
+        englishalt: "decide",
+        russian: "решить",
+        spanish: "resolver",
+        russianlatin: "reshit",
+        level: 1,
+      };
+      break;
+    case 38:
+      adverb = {
+        english: "start",
+        russian: "начать",
+        spanish: "empezar",
+        russianlatin: "nachat",
+        level: 1,
+      };
+      break;
+    case 39:
+      adverb = {
+        english: "watch",
+        englishalt: "look",
+        russian: "смотреть",
+        spanish: "mirar",
+        russianlatin: "smotret",
+        level: 1,
+      };
+      break;
+    case 40:
+      adverb = {
+        english: "go out",
+        englishalt: "leave",
+        russian: "уйти",
+        spanish: "salir",
+        russianlatin: "uyti",
+        level: 1,
+      };
+      break;
+    case 41:
+      adverb = {
+        english: "leave behind",
+        englishalt: "leave",
+        russian: "позволять",
+        spanish: "dejar",
+        russianlatin: "pozvolyat",
+        level: 1,
+      };
+      break;
+    case 42:
+      adverb = {
+        english: "find",
+        englishalt: "discover",
+        russian: "искать / найти",
+        spanish: "encontrar",
+        spanishalt: "hallar",
+        spanishalt2: "descubrir",
+        russianlatin: "iskat",
+        russianlatinalt: "nayti",
+        level: 1,
+      };
+      break;
+    case 43:
+      adverb = {
+        english: "hear",
+        russian: "слышать",
+        spanish: "oir",
+        russianlatin: "slyshat",
+        level: 1,
+      };
+      break;
+    case 44:
+      adverb = {
+        english: "feel",
+        russian: "чувствовать",
+        spanish: "sentir",
+        russianlatin: "chuvstvovat",
+        level: 1,
+      };
+      break;
+    case 45:
+      adverb = {
+        english: "read",
+        russian: "читать",
+        spanish: "leer",
+        russianlatin: "chitat",
+        level: 1,
+      };
+      break;
+    case 46:
+      adverb = {
+        english: "sit",
+        russian: "сесть",
+        spanish: "sentarse",
+        russianlatin: "sest",
+        level: 1,
+      };
+      break;
+    case 47:
+      adverb = {
+        english: "sleep",
+        russian: "спать",
+        spanish: "dormir",
+        russianlatin: "spat",
+        level: 1,
+      };
+      break;
+    case 48:
+      adverb = {
+        english: "die",
+        russian: "умереть",
+        spanish: "morir",
+        russianlatin: "umeret",
+        level: 1,
+      };
+      break;
+    case 49:
+      adverb = {
+        english: "kill",
+        russian: "убить",
+        spanish: "matar",
+        russianlatin: "ubit",
+        level: 1,
+      };
+      break;
+    case 50:
+      adverb = {
+        english: "call",
+        russian: "называть",
+        spanish: "llamar",
+        russianlatin: "nazivat",
+        level: 1,
+      };
+      break;
+    default:
+      adverb = {
+        english: " ",
+        russian: " ",
+        spanish: " ",
+        russianlatin: " ",
+        level: 3,
+      };
+      if (newAdverb > 50 && newAdverb < 101) {
+        adverb.level = 2;
+      }
+      break;
   }
-  if (newAdverb === -1) {
-    qadverb = 4;
-    aadverb = 4;
-    adverb = {
-      english: "Adverbs / Наречия (Medium)",
-      level: 2,
-    };
-  }
-  if (newAdverb === 0) {
-    qadverb = 4;
-    aadverb = 4;
-    adverb = {
-      english: "Adverbs / Наречия (Easy)",
-      level: 1,
-    };
-  }
-  if (newAdverb === 1) {
-    adverb = {
-      english: "go",
-      russian: "идти",
-      russianlatin: "idti",
-      spanish: "ir",
-      level: 1,
-    };
-  }
-  if (newAdverb === 2) {
-    adverb = {
-      english: "be",
-      russian: "быть",
-      russianlatin: "byut",
-      spanish: "estar",
-      spanishalt: "ser",
-      level: 1,
-    };
-  }
-  if (newAdverb === 3) {
-    adverb = {
-      english: "have",
-      russian: "иметь",
-      russianlatin: "imet",
-      spanish: "tener",
-      level: 1,
-    };
-  }
-  if (newAdverb === 4) {
-    adverb = {
-      english: "do",
-      englishalt: "make",
-      spanish: "hacer",
-      russian: "делать",
-      russianlatin: "delat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 5) {
-    adverb = {
-      english: "take",
-      russian: "брать",
-      spanish: "tocar",
-      russianlatin: "brat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 6) {
-    adverb = {
-      english: "give",
-      russian: "давaть",
-      spanish: "dar",
-      russianlatin: "davat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 7) {
-    adverb = {
-      english: "can",
-      englishalt: "be able",
-      russian: "мочь",
-      spanish: "poder",
-      russianlatin: "mohch",
-      level: 1,
-    };
-  }
-  if (newAdverb === 8) {
-    adverb = {
-      english: "think",
-      russian: "думать",
-      spanish: "pensar",
-      russianlatin: "dumat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 9) {
-    adverb = {
-      english: "say",
-      russian: "говорить/сказать",
-      spanish: "decir",
-      russianlatin: "govorit",
-      russianlatinalt: "skazat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 10) {
-    adverb = {
-      english: "know",
-      russian: "знать",
-      spanish: "conocer",
-      spanishalt: "saber",
-      russianlatin: "znat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 11) {
-    adverb = {
-      english: "eat",
-      russian: "есть",
-      spanish: "comer",
-      russianlatin: "yest",
-      level: 1,
-    };
-  }
-  if (newAdverb === 12) {
-    adverb = {
-      english: "want",
-      russian: "хотеть",
-      spanish: "querer",
-      russianlatin: "khotet",
-      level: 1,
-    };
-  }
-  if (newAdverb === 13) {
-    adverb = {
-      english: "see",
-      russian: "видеть",
-      spanish: "ver",
-      russianlatin: "videt",
-      level: 1,
-    };
-  }
-  if (newAdverb === 14) {
-    adverb = {
-      english: "live",
-      russian: "жить",
-      spanish: "vivir",
-      russianlatin: "zhit",
-      level: 1,
-    };
-  }
-  if (newAdverb === 15) {
-    adverb = {
-      english: "become",
-      russian: "стать / становиться",
-      spanish: "convertirse",
-      russianlatin: "stat",
-      russianlatinalt: "stanovitsya",
-      level: 1,
-    };
-  }
-  if (newAdverb === 16) {
-    adverb = {
-      english: "stay",
-      russian: "остаться",
-      spanish: "quedar",
-      russianlatin: "ostatsya",
-      level: 1,
-    };
-  }
-  if (newAdverb === 17) {
-    adverb = {
-      english: "wait",
-      russian: "ждать",
-      spanish: "esperar",
-      russianlatin: "zhdat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 18) {
-    adverb = {
-      english: "mean",
-      englishalt: "signify",
-      russian: "значить",
-      spanish: "significar",
-      russianlatin: "znachit",
-      level: 1,
-    };
-  }
-  if (newAdverb === 19) {
-    adverb = {
-      english: "work",
-      russian: "работать",
-      spanish: "trabajar",
-      russianlatin: "rabotat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 20) {
-    adverb = {
-      english: "love",
-      russian: "любить",
-      spanish: "amar",
-      russianlatin: "lyubit",
-      level: 1,
-    };
-  }
-  if (newAdverb === 21) {
-    adverb = {
-      english: "hate",
-      russian: "ненавидеть",
-      spanish: "odiar",
-      russianlatin: "nenavidet",
-      level: 1,
-    };
-  }
-  if (newAdverb === 22) {
-    adverb = {
-      english: "come",
-      englishalt: "arrive",
-      russian: "приходить",
-      spanish: "venir",
-      russianlatin: "prikhodit",
-      level: 1,
-    };
-  }
-  if (newAdverb === 23) {
-    adverb = {
-      english: "write",
-      russian: "писать",
-      spanish: "escribir",
-      russianlatin: "pisat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 24) {
-    adverb = {
-      english: "need",
-      russian: "нуждаться",
-      spanish: "necesitar",
-      russianlatin: "nuzhdatsya",
-      level: 1,
-    };
-  }
-  if (newAdverb === 25) {
-    adverb = {
-      english: "return",
-      russian: "возвращаться",
-      spanish: "volver",
-      russianlatin: "vozvrashchatsya",
-      russianlatinalt: "vozvrashatsya",
-      level: 1,
-    };
-  }
-  if (newAdverb === 26) {
-    adverb = {
-      english: "seem",
-      englishalt: "appear",
-      russian: "казаться",
-      spanish: "aparecer",
-      spanishalt: "parecer",
-      russianlatin: "kazatsya",
-      level: 1,
-    };
-  }
-  if (newAdverb === 27) {
-    adverb = {
-      english: "lay",
-      englishalt: "lie",
-      russian: "лежать",
-      spanish: "acostar",
-      russianlatin: "leyzhat",
-      russianlatinalt: "layzhat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 28) {
-    adverb = {
-      english: "remember",
-      russian: "помнить",
-      spanish: "recordar",
-      russianlatin: "pomnit",
-      level: 1,
-    };
-  }
-  if (newAdverb === 29) {
-    adverb = {
-      english: "ask",
-      russian: "спрашивать",
-      spanish: "pedir",
-      russianlatin: "sprashivat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 30) {
-    adverb = {
-      english: "answer",
-      englishalt: "reply",
-      russian: "отвечать",
-      spanish: "responder",
-      russianlatin: "otvechat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 31) {
-    adverb = {
-      english: "walk",
-      russian: "ходить",
-      spanish: "caminar",
-      russianlatin: "khodit",
-      level: 1,
-    };
-  }
-  if (newAdverb === 32) {
-    adverb = {
-      english: "understand",
-      englishalt: "realize",
-      russian: "понимать",
-      spanish: "comprender",
-      spanishalt: "darse cuenta",
-      russianlatin: "ponimat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 33) {
-    adverb = {
-      english: "get",
-      englishalt: "receive",
-      englishalt2: "obtain",
-      russian: "получать",
-      spanish: "obtener",
-      spanishalt: "recibir",
-      russianlatin: "poluchat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 34) {
-    adverb = {
-      english: "count",
-      englishalt: "consider",
-      russian: "считать",
-      spanish: "considerar",
-      spanishalt: "contar",
-      russianlatin: "schitat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 35) {
-    adverb = {
-      english: "stand",
-      englishalt: "rise",
-      englishalt2: "wake up",
-      russian: "стоять",
-      spanish: "levantar",
-      spanishalt: "parar",
-      russianlatin: "stoyat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 36) {
-    adverb = {
-      english: "learn",
-      russian: "узнать / учить",
-      spanish: "aprender",
-      russianlatin: "uznat",
-      russianlatinalt: "uchit",
-      level: 1,
-    };
-  }
-  if (newAdverb === 37) {
-    adverb = {
-      english: "solve",
-      englishalt: "decide",
-      russian: "решить",
-      spanish: "resolver",
-      russianlatin: "reshit",
-      level: 1,
-    };
-  }
-  if (newAdverb === 38) {
-    adverb = {
-      english: "start",
-      russian: "начать",
-      spanish: "empezar",
-      russianlatin: "nachat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 39) {
-    adverb = {
-      english: "watch",
-      englishalt: "look",
-      russian: "смотреть",
-      spanish: "mirar",
-      russianlatin: "smotret",
-      level: 1,
-    };
-  }
-  if (newAdverb === 40) {
-    adverb = {
-      english: "go out",
-      englishalt: "leave",
-      russian: "уйти",
-      spanish: "salir",
-      russianlatin: "uyti",
-      level: 1,
-    };
-  }
-  if (newAdverb === 41) {
-    adverb = {
-      english: "leave behind",
-      englishalt: "leave",
-      russian: "позволять",
-      spanish: "dejar",
-      russianlatin: "pozvolyat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 42) {
-    adverb = {
-      english: "find",
-      englishalt: "discover",
-      russian: "искать / найти",
-      spanish: "encontrar",
-      spanishalt: "hallar",
-      spanishalt2: "descubrir",
-      russianlatin: "iskat",
-      russianlatinalt: "nayti",
-      level: 1,
-    };
-  }
-  if (newAdverb === 43) {
-    adverb = {
-      english: "hear",
-      russian: "слышать",
-      spanish: "oir",
-      russianlatin: "slyshat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 44) {
-    adverb = {
-      english: "feel",
-      russian: "чувствовать",
-      spanish: "sentir",
-      russianlatin: "chuvstvovat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 45) {
-    adverb = {
-      english: "read",
-      russian: "читать",
-      spanish: "leer",
-      russianlatin: "chitat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 46) {
-    adverb = {
-      english: "sit",
-      russian: "сесть",
-      spanish: "sentarse",
-      russianlatin: "sest",
-      level: 1,
-    };
-  }
-  if (newAdverb === 47) {
-    adverb = {
-      english: "sleep",
-      russian: "спать",
-      spanish: "dormir",
-      russianlatin: "spat",
-      level: 1,
-    };
-  }
-  if (newAdverb === 48) {
-    adverb = {
-      english: "die",
-      russian: "умереть",
-      spanish: "morir",
-      russianlatin: "umeret",
-      level: 1,
-    };
-  }
-  if (newAdverb === 49) {
-    adverb = {
-      english: "kill",
-      russian: "убить",
-      spanish: "matar",
-      russianlatin: "ubit",
-      level: 1,
-    };
-  }
-  if (newAdverb === 50) {
-    adverb = {
-      english: "call",
-      russian: "называть",
-      spanish: "llamar",
-      russianlatin: "nazivat",
-      level: 1,
-    };
-  }
-  if (newAdverb > 50 && newAdverb < 101) {
-    adverb = {
-      english: "",
-      russian: "",
-      spanish: "",
-      russianlatin: "",
-      level: 2,
-    };
-  }
-  if (newAdverb > 100 && newAdverb < 151) {
-    adverb = {
-      english: "",
-      russian: "",
-      spanish: "",
-      russianlatin: "",
-      level: 3,
-    };
-  }
-
-
 
   return (
     <div>

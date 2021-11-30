@@ -61,7 +61,11 @@ const CyrillicToLatin = () => {
         latinArray[i] = "b";
         break;
       case "в":
-        latinArray[i] = "v";
+        if (previous === "к") {
+          latinArray[i] = "";
+        } else {
+          latinArray[i] = "v";
+        }
         break;
       case "г":
         latinArray[i] = "g";
@@ -82,6 +86,11 @@ const CyrillicToLatin = () => {
       case "к":
         if ((previous === "и" || previous === "а") && (!next || next === "т")) {
           latinArray[i] = "c";
+        } else if (
+          (!previous || previous === "с" || prevIsVowel) &&
+          next === "в"
+        ) {
+          latinArray[i] = "qu";
         } else if (prevIsVowel) {
           latinArray[i] = "ck";
         } else {
@@ -194,7 +203,7 @@ const CyrillicToLatin = () => {
         latinArray[i] = "e";
         break;
       case "ю":
-        latinArray[i] = "yu";
+        latinArray[i] = "u";
         break;
       case "я":
         latinArray[i] = "ya";

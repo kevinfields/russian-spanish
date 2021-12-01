@@ -107,6 +107,16 @@ const Links = () => {
             </Link>
           </p>
           <p className="path">
+            <Link className="all" to="/allnouns">
+              Nouns (All)
+            </Link>
+          </p>
+          <p className="path">
+            <Link className="all" to="/allverbs">
+              Verbs (All)
+            </Link>
+          </p>
+          <p className="path">
             <Link className="customquiz" to="/customquiz">
               Custom
             </Link>

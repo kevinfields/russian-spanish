@@ -22,6 +22,9 @@ const VerbPage = (props) => {
   ) {
     setNewVerb(-2);
   }
+  if (props.difficulty === "all" && newVerb < 0 && newVerb !== -3) {
+    setNewVerb(-3);
+  }
 
   let verb;
   let qverb = Math.floor(Math.random() * 4);
@@ -49,6 +52,14 @@ const VerbPage = (props) => {
   }
 
   switch (newVerb) {
+    case -3:
+      qverb = 4;
+      averb = 4;
+      verb = {
+        english: "Verbs / Глаголы (All)",
+        level: 4,
+      };
+      break;
     case -2:
       qverb = 4;
       averb = 4;
@@ -1487,7 +1498,7 @@ const VerbPage = (props) => {
           qword={qverb}
           aword={averb}
           onChange={(number) => setNewVerb(number)}
-          level={verb.level}
+          level={props.difficulty !== "all" ? verb.level : 4}
           type="Verbs"
         />
       </div>

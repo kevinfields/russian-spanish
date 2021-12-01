@@ -61,6 +61,19 @@ body {
   border-radius: 5px;
 }
 
+.allform {
+  background-color: yellow;
+
+  position: relative;
+  margin: 15px;
+  padding: 15px;
+  width: 300px;
+  left: 455px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
 .qword {
   width: 100%;
   height: 40px;
@@ -188,6 +201,11 @@ body {
 .hard {
   color: lightsalmon;
   text-shadow: 1px 1px salmon;
+}
+
+.all {
+  color: yellow;
+  text-shadow: 1px 1px gold;
 }
 
 .customquiz {
@@ -322,6 +340,9 @@ body {
 }
 #l3button {
   background: lightsalmon;
+}
+#lallbutton {
+  background: yellow;
 }
 .questioncontainer {
   display: flex;

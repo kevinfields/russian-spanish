@@ -22,6 +22,9 @@ const NounPage = (props) => {
   ) {
     setNewNoun(-2);
   }
+  if (props.difficulty === "all" && newNoun < 0 && newNoun !== -3) {
+    setNewNoun(-3);
+  }
 
   let noun;
   let qnoun = Math.floor(Math.random() * 4);
@@ -49,6 +52,14 @@ const NounPage = (props) => {
   }
 
   switch (newNoun) {
+    case -3:
+      qnoun = 4;
+      anoun = 4;
+      noun = {
+        english: "Nouns / Существительные (All)",
+        level: 4,
+      };
+      break;
     case -2:
       qnoun = 4;
       anoun = 4;
@@ -104,7 +115,6 @@ const NounPage = (props) => {
       noun = {
         english: "house",
         englishalt: "home",
-
         russian: "дом",
         spanish: "casa",
         spanishalt: "hogar",
@@ -992,6 +1002,474 @@ const NounPage = (props) => {
         level: 2,
       };
       break;
+    case 101:
+      noun = {
+        english: "foot",
+        spanish: "pie",
+        russian: "нога",
+        russianlatin: "noga",
+        level: 3,
+      };
+      break;
+    case 102:
+      noun = {
+        english: "table",
+        spanish: "mesa",
+        russian: "стол",
+        russianlatin: "stol",
+        level: 3,
+      };
+      break;
+    case 103:
+      noun = {
+        english: "minute",
+        englishalt: "moment",
+        spanish: "minuto",
+        spanishalt: "momento",
+        russian: "минута",
+        russianlatin: "minuta",
+        level: 3,
+      };
+      break;
+    case 104:
+      noun = {
+        english: "source",
+        englishalt: "beginning",
+        spanish: "comienzo",
+        russian: "начало",
+        russianlatin: "nachalo",
+        level: 3,
+      };
+      break;
+    case 105:
+      noun = {
+        english: "wife",
+        spanish: "esposa",
+        spanishalt: "marida",
+        russian: "жена",
+        russianlatin: "zhena",
+        level: 3,
+      };
+      break;
+    case 106:
+      noun = {
+        english: "husband",
+        spanish: "esposo",
+        spanishalt: "marido",
+        russian: "муж",
+        russianlatin: "muzh",
+        level: 3,
+      };
+      break;
+    case 107:
+      noun = {
+        english: "hour",
+        spanish: "hora",
+        russian: "час",
+        russianlatin: "chas",
+        level: 3,
+      };
+      break;
+    case 108:
+      noun = {
+        english: "second",
+        spanish: "segundo",
+        russian: "секунда",
+        russianlatin: "sekunda",
+        level: 3,
+      };
+      break;
+    case 109:
+      noun = {
+        english: "soul",
+        englishalt: "sprit",
+        spanish: "alma",
+        spanishalt: "espiritu",
+        russian: "душа",
+        russianlatin: "dusha",
+        level: 3,
+      };
+      break;
+    case 110:
+      noun = {
+        english: "part",
+        spanish: "parte",
+        russian: "часть",
+        russianlatin: "chast",
+        level: 3,
+      };
+      break;
+    case 111:
+      noun = {
+        english: "street",
+        spanish: "calle",
+        russian: "улица",
+        russianlatin: "ulitsa",
+        level: 3,
+      };
+      break;
+    case 112:
+      noun = {
+        english: "morning",
+        spanish: "mañana",
+        spanishalt: "manana",
+        russian: "утро",
+        russianlatin: "utpo",
+        level: 3,
+      };
+      break;
+    case 113:
+      noun = {
+        english: "evening",
+        spanish: "tarde",
+        russian: "вечер",
+        russianlatin: "vecher",
+        level: 3,
+      };
+      break;
+    case 114:
+      noun = {
+        english: "finger",
+        englishalt: "toe",
+        spanish: "dedo",
+        russian: "палец",
+        russianlatin: "palets",
+        level: 3,
+      };
+      break;
+    case 115:
+      noun = {
+        english: "school",
+        spanish: "escuela",
+        russian: "школа",
+        russianlatin: "shkola",
+        level: 3,
+      };
+      break;
+    case 116:
+      noun = {
+        english: "love",
+        spanish: "amor",
+        russian: "любовь",
+        russianlatin: "lyubov",
+        level: 3,
+      };
+      break;
+    case 117:
+      noun = {
+        english: "letter",
+        spanish: "letra",
+        russian: "буква",
+        russianlatin: "bukva",
+        level: 3,
+      };
+      break;
+    case 118:
+      noun = {
+        english: "soldier",
+        spanish: "soldado",
+        russian: "солдат",
+        russianlatin: "soldat",
+        level: 3,
+      };
+      break;
+    case 119:
+      noun = {
+        english: "apartment",
+        spanish: "apartamento",
+        russian: "квартира",
+        russianlatin: "kvartira",
+        level: 3,
+      };
+      break;
+    case 120:
+      noun = {
+        english: "window",
+        spanish: "ventana",
+        russian: "окно",
+        russianlatin: "okno",
+        level: 3,
+      };
+      break;
+    case 121:
+      noun = {
+        english: "room",
+        spanish: "cuarto",
+        spanishalt: "sala",
+        russian: "комната",
+        russianlatin: "komnata",
+        level: 3,
+      };
+      break;
+    case 122:
+      noun = {
+        english: "question",
+        spanish: "pregunta",
+        russian: "вопрос",
+        russianlatin: "vopros",
+        level: 3,
+      };
+      break;
+    case 123:
+      noun = {
+        english: "row",
+        englishalt: "line",
+        spanish: "fila",
+        spanishalt: "hilera",
+        russian: "ряд",
+        russianlatin: "ryad",
+        level: 3,
+      };
+      break;
+    case 124:
+      noun = {
+        english: "feeling",
+        englishalt: "sense",
+        spanish: "sensacion",
+        spanishalt: "sentimiento",
+        russian: "чувство",
+        russianlatin: "chuvstvo",
+        level: 3,
+      };
+      break;
+    case 125:
+      noun = {
+        english: "labor",
+        spanish: "labor",
+        russian: "труд",
+        russianlatin: "trud",
+        level: 3,
+      };
+      break;
+    case 126:
+      noun = {
+        english: "movement",
+        spanish: "movimiento",
+        russian: "движение",
+        russianlatin: "dvizheniye",
+        level: 3,
+      };
+      break;
+    case 127:
+      noun = {
+        english: "opportunity",
+        spanish: "oportunidad",
+        russian: "возможность",
+        russianlatin: "vozmozhnost",
+        level: 3,
+      };
+      break;
+    case 128:
+      noun = {
+        english: "fire",
+        spanish: "fuego",
+        russian: "огонь",
+        russianlatin: "ogon",
+        level: 3,
+      };
+      break;
+    case 129:
+      noun = {
+        english: "guest",
+        spanish: "huesped",
+        spanishalt: "invitado",
+        russian: "гость",
+        russianlatin: "gost",
+        level: 3,
+      };
+      break;
+    case 130:
+      noun = {
+        english: "tooth",
+        spanish: "diente",
+        russian: "зуб",
+        russianlatin: "zub",
+        level: 3,
+      };
+      break;
+    case 131:
+      noun = {
+        english: "army",
+        spanish: "ejercito",
+        russian: "армия",
+        russianlatin: "armiya",
+        level: 3,
+      };
+      break;
+    case 132:
+      noun = {
+        english: "family",
+        spanish: "familia",
+        russian: "семья",
+        russianlatin: "semya",
+        level: 3,
+      };
+      break;
+    case 133:
+      noun = {
+        english: "group",
+        spanish: "grupo",
+        russian: "группа",
+        russianlatin: "gruppa",
+        level: 3,
+      };
+      break;
+    case 134:
+      noun = {
+        english: "help",
+        spanish: "ayuda",
+        russian: "помощь",
+        russianlatin: "pomoshch",
+        level: 3,
+      };
+      break;
+    case 135:
+      noun = {
+        english: "corner",
+        englishalt: "angle",
+        spanish: "esquina",
+        spanishalt: "angulo",
+        russian: "угол",
+        russianlatin: "ugol",
+        level: 3,
+      };
+      break;
+    case 136:
+      noun = {
+        english: "shape",
+        spanish: "forma",
+        russian: "форма",
+        russianlatin: "forma",
+        level: 3,
+      };
+      break;
+    case 137:
+      noun = {
+        english: "law",
+        spanish: "ley",
+        russian: "закон",
+        russianlatin: "zakon",
+        level: 3,
+      };
+      break;
+    case 138:
+      noun = {
+        english: "rule",
+        spanish: "regla",
+        russian: "правило",
+        russianlatin: "pravilo",
+        level: 3,
+      };
+      break;
+    case 139:
+      noun = {
+        english: "wind",
+        spanish: "viento",
+        russian: "ветер",
+        russianlatin: "veter",
+        level: 3,
+      };
+      break;
+    case 140:
+      noun = {
+        english: "sign",
+        spanish: "señal",
+        spanishalt: "senal",
+        russian: "знак",
+        russianlatin: "znak",
+        level: 3,
+      };
+      break;
+    case 141:
+      noun = {
+        english: "response",
+        spanish: "respuesta",
+        russian: "ответ",
+        russianlatin: "otvet",
+        level: 3,
+      };
+      break;
+    case 142:
+      noun = {
+        english: "sound",
+        spanish: "sonido",
+        russian: "звук",
+        russianlatin: "zvuk",
+        level: 3,
+      };
+      break;
+    case 143:
+      noun = {
+        english: "fork",
+        spanish: "tenedor",
+        russian: "вилка",
+        russianlatin: "vilka",
+        level: 3,
+      };
+      break;
+    case 144:
+      noun = {
+        english: "spoon",
+        spanish: "cuchara",
+        russian: "ложка",
+        russianlatin: "lozhka",
+        level: 3,
+      };
+      break;
+    case 145:
+      noun = {
+        english: "knife",
+        spanish: "cuchillo",
+        russian: "нож",
+        russianlatin: "nozh",
+        level: 3,
+      };
+      break;
+    case 146:
+      noun = {
+        english: "plate",
+        spanish: "plato",
+        russian: "пластина",
+        russianlatin: "plastina",
+        level: 3,
+      };
+      break;
+    case 147:
+      noun = {
+        english: "chair",
+        spanish: "silla",
+        russian: "стул",
+        russianlatin: "stul",
+        level: 3,
+      };
+      break;
+    case 148:
+      noun = {
+        english: "hair",
+        spanish: "pelo",
+        russian: "волосы",
+        russianlatin: "volosy",
+        level: 3,
+      };
+      break;
+    case 149:
+      noun = {
+        english: "doctor",
+        spanish: "doctor",
+        russian: "врач",
+        russianlatin: "vrach",
+        level: 3,
+      };
+      break;
+    case 150:
+      noun = {
+        english: "instance",
+        spanish: "vez",
+        russian: "раз",
+        russianlatin: "paz",
+        level: 3,
+      };
+      break;
     default:
       noun = {
         english: " ",
@@ -1000,6 +1478,7 @@ const NounPage = (props) => {
         russianlatin: " ",
         level: 3,
       };
+      break;
   }
 
   return (
@@ -1018,7 +1497,7 @@ const NounPage = (props) => {
           qword={qnoun}
           aword={anoun}
           onChange={(number) => setNewNoun(number)}
-          level={noun.level}
+          level={props.difficulty !== "all" ? noun.level : 4}
           type="Nouns"
         />
       </div>

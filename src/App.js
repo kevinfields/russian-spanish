@@ -95,6 +95,8 @@ function App() {
           element={<AdjectivePage difficulty="hard" />}
         />
         <Route path="/hardadverbs" element={<AdverbPage difficulty="hard" />} />
+        <Route path="/allnouns" element={<NounPage difficulty="all" />} />
+        <Route path="/allverbs" element={<VerbPage difficulty="all" />} />
         <Route path="/customquiz" element={<CustomQuizPage />} />
       </Routes>
       <p> </p>

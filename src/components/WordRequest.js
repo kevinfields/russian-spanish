@@ -6,7 +6,7 @@ import { useState } from "react";
 const WordRequest = (props) => {
   const wordCtx = useContext(UserWordsContext);
   const wordStatus = wordCtx.wordStatus(props.id);
-  const [altClass, setAltClass] = useState(false);
+  const [altClass, setAltClass] = useState(wordStatus);
 
   const toggleWordStatusHandler = () => {
     if (wordStatus) {

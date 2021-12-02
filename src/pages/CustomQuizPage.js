@@ -58,8 +58,8 @@ const CustomQuizPage = () => {
       <CustomQuestion
         english={word.english}
         spanish={word.spanish}
-        russian={word.russian}
-        cyrillic={word.cyrillic}
+        russian={word.cyrillic}
+        russianlatin={word.russian}
         qword={qword}
         aword={aword}
         onChange={(number) => setNewWord(number)}

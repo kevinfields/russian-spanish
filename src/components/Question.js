@@ -77,7 +77,6 @@ let highscore = false;
 let submittedscore = 0;
 
 const Question = (props) => {
-  console.log(fullarray);
   const navigate = useNavigate();
   const [name1, setName1] = useState("");
   let mode;
@@ -263,17 +262,21 @@ const Question = (props) => {
       }
     }
 
-    if (props.level === 1) {
-      props.onChange(easyarray[k]);
-    }
-    if (props.level === 2) {
-      props.onChange(mediumarray[k]);
-    }
-    if (props.level === 3) {
-      props.onChange(hardarray[k]);
-    }
-    if (props.level === 4) {
-      props.onChange(fullarray[k]);
+    switch (props.level) {
+      case 1:
+        props.onChange(easyarray[k]);
+        break;
+      case 2:
+        props.onChange(mediumarray[k]);
+        break;
+      case 3:
+        props.onChange(hardarray[k]);
+        break;
+      case 4:
+        props.onChange(fullarray[k]);
+        break;
+      default:
+        break;
     }
   };
 

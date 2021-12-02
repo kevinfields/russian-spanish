@@ -4,6 +4,7 @@ import { useState } from "react";
 const VerbPage = (props) => {
   const [newVerb, setNewVerb] = useState(0);
   const [language, setLanguage] = useState("All");
+  const [languageR, setLanguageR] = useState("All");
 
   if (props.difficulty === "easy" && (newVerb < 0 || newVerb > 50)) {
     setNewVerb(0);
@@ -32,23 +33,47 @@ const VerbPage = (props) => {
   if (qverb === 0) {
     qverb = 3;
   }
-  if (language === "English") {
-    qverb = 1;
+  switch (language) {
+    case "English":
+      qverb = 1;
+      break;
+    case "Spanish":
+      qverb = 2;
+      break;
+    case "Russian":
+      qverb = 3;
+      break;
+    default:
+      break;
   }
-  if (language === "Spanish") {
-    qverb = 2;
+
+  switch (qverb) {
+    case 1:
+      averb = Math.floor(Math.random() * 2) + 2;
+      break;
+    case 2:
+      averb = 3 - 2 * Math.floor(Math.random() * 2);
+      console.log("averb: " + averb);
+      break;
+    case 3:
+      averb = Math.floor(Math.random() * 2) + 1;
+      break;
+    default:
+      break;
   }
-  if (language === "Russian") {
-    qverb = 3;
-  }
-  if (qverb === 1) {
-    averb = 3;
-  }
-  if (qverb === 2) {
-    averb = 3;
-  }
-  if (qverb === 3) {
-    averb = Math.floor(Math.random() * 2) + 1;
+
+  switch (languageR) {
+    case "English":
+      averb = 1;
+      break;
+    case "Spanish":
+      averb = 2;
+      break;
+    case "Russian":
+      averb = 3;
+      break;
+    default:
+      break;
   }
 
   switch (newVerb) {
@@ -80,7 +105,7 @@ const VerbPage = (props) => {
       qverb = 4;
       averb = 4;
       verb = {
-        english: "Verbs / Глаголы (Basic)",
+        english: "Verbs / Глаголы (Easy)",
         level: 1,
       };
       break;
@@ -1503,45 +1528,110 @@ const VerbPage = (props) => {
         />
       </div>
       {qverb === 4 ? (
-        <div className="langselector">
-          <form>
-            <input
-              type="radio"
-              id="englishhonly"
-              name="langselector"
-              value="English"
-              onChange={(e) => setLanguage(e.target.value)}
-            />
-            <label htmlFor="englishonly">Only ask in English</label>
-            <br />
-            <input
-              type="radio"
-              id="spanishonly"
-              name="langselector"
-              value="Spanish"
-              onChange={(e) => setLanguage(e.target.value)}
-            />
-            <label htmlFor="spanishonly">Only ask in Spanish</label>
-            <br />
-            <input
-              type="radio"
-              id="russianonly"
-              name="langselector"
-              value="Russian"
-              onChange={(e) => setLanguage(e.target.value)}
-            />
-            <label htmlFor="russianonly">Only ask in Russian</label>
-            <br />
-            <input
-              type="radio"
-              id="all"
-              name="langselector"
-              value="All"
-              onChange={(e) => setLanguage(e.target.value)}
-            />
-            <label htmlFor="all">Ask in any language </label>
-          </form>
-        </div>
+        <>
+          <div className="langselector">
+            <form>
+              {languageR === "English" ? null : (
+                <>
+                  <input
+                    type="radio"
+                    id="onlyenglish"
+                    name="langselector"
+                    value="English"
+                    onChange={(e) => setLanguage(e.target.value)}
+                  />
+                  <label htmlFor="onlyenglish">Only ask in English</label>
+                </>
+              )}
+              <br />
+              {languageR === "Spanish" ? null : (
+                <>
+                  <input
+                    type="radio"
+                    id="onlyspanish"
+                    name="langselector"
+                    value="Spanish"
+                    onChange={(e) => setLanguage(e.target.value)}
+                  />
+                  <label htmlFor="onlyspanish">Only ask in Spanish</label>
+                </>
+              )}
+              <br />
+              {languageR === "Russian" ? null : (
+                <>
+                  <input
+                    type="radio"
+                    id="onlyrussian"
+                    name="langselector"
+                    value="Russian"
+                    onChange={(e) => setLanguage(e.target.value)}
+                  />
+                  <label htmlFor="onlyrussian">Only ask in Russian</label>
+                </>
+              )}
+              <br />
+              <input
+                type="radio"
+                id="all"
+                name="langselector"
+                value="All"
+                onChange={(e) => setLanguage(e.target.value)}
+              />
+              <label htmlFor="all">Ask in any language </label>
+            </form>
+          </div>
+          <div className="alangselector">
+            <form>
+              {language === "English" ? null : (
+                <>
+                  <input
+                    type="radio"
+                    id="englishonly"
+                    name="langselector"
+                    value="English"
+                    onChange={(e) => setLanguageR(e.target.value)}
+                  />
+                  <label htmlFor="englishonly">Only respond in English</label>
+                </>
+              )}
+              <br />
+              {language === "Spanish" ? null : (
+                <>
+                  <input
+                    type="radio"
+                    id="spanishonly"
+                    name="langselector"
+                    value="Spanish"
+                    onChange={(e) => setLanguageR(e.target.value)}
+                  />
+                  <label htmlFor="spanishonly">Only respond in Spanish</label>
+                </>
+              )}
+              <br />
+              {language === "Russian" ? null : (
+                <>
+                  <input
+                    type="radio"
+                    id="russianonly"
+                    name="langselector"
+                    value="Russian"
+                    onChange={(e) => setLanguageR(e.target.value)}
+                  />
+                  <label htmlFor="russianonly">Only respond in Russian</label>
+                </>
+              )}
+              <br />
+              <input
+                type="radio"
+                id="allagain"
+                name="langselector"
+                value="All"
+                onChange={(e) => setLanguageR(e.target.value)}
+              />
+              <label htmlFor="allagain">Respond in any language</label>
+            </form>
+          </div>
+        </>
       ) : null}
     </div>
   );

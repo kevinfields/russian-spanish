@@ -49,11 +49,10 @@ const NounPage = (props) => {
 
   switch (qnoun) {
     case 1:
-      anoun = Math.floor(Math.random() * 2) + 2;
+      anoun = 3;
       break;
     case 2:
-      anoun = 3 - 2 * Math.floor(Math.random() * 2);
-      console.log("anoun: " + anoun);
+      anoun = 3;
       break;
     case 3:
       anoun = Math.floor(Math.random() * 2) + 1;

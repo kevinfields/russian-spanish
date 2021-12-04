@@ -25,11 +25,8 @@ const AdjectivePage = (props) => {
   }
 
   let adj;
-  let qadj = Math.floor(Math.random() * 4);
+  let qadj;
   let aadj;
-  if (qadj === 0) {
-    qadj = 3;
-  }
 
   switch (language) {
     case "English":
@@ -42,16 +39,16 @@ const AdjectivePage = (props) => {
       qadj = 3;
       break;
     default:
+      qadj = Math.floor(Math.random() * 3) + 1;
       break;
   }
 
   switch (qadj) {
     case 1:
-      aadj = Math.floor(Math.random() * 2) + 2;
+      aadj = 3;
       break;
     case 2:
-      aadj = 3 - 2 * Math.floor(Math.random() * 2);
-      console.log("aadj: " + aadj);
+      aadj = 3;
       break;
     case 3:
       aadj = Math.floor(Math.random() * 2) + 1;

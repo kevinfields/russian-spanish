@@ -100,13 +100,16 @@ const Question = (props) => {
       id: Math.floor(Math.random() * 9999),
       gamemode: modetype,
     };
-    fetch("https://formsprojec-default-rtdb.firebaseio.com/hiscores.json", {
-      method: "POST",
-      body: JSON.stringify(hiscoreItem),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then(() => {
+    fetch(
+      "https://russian-english-a2575-default-rtdb.firebaseio.com//hiscores.json",
+      {
+        method: "POST",
+        body: JSON.stringify(hiscoreItem),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    ).then(() => {
       navigate("../hiscores");
       highscore = false;
       submittedscore = 0;
@@ -120,6 +123,7 @@ const Question = (props) => {
     percent = 0;
     failed = 0;
   }
+
   const [response, setResponse] = useState("");
 
   const onSubmit = (e) => {
@@ -153,18 +157,6 @@ const Question = (props) => {
         case props.english || props.englishalt || props.englishalt2:
           score++;
           break;
-        case "setscore48":
-          score = score + 48;
-          break;
-        case "setscore38":
-          score = score + 38;
-          break;
-        case "setscore28":
-          score = score + 28;
-          break;
-        case "setscore18":
-          score = score + 18;
-          break;
         default:
           failed = 2;
           break;
@@ -184,18 +176,6 @@ const Question = (props) => {
         case props.spanishalt2:
           score++;
           break;
-        case "setscore48":
-          score = score + 48;
-          break;
-        case "setscore38":
-          score = score + 38;
-          break;
-        case "setscore28":
-          score = score + 28;
-          break;
-        case "setscore18":
-          score = score + 18;
-          break;
         default:
           failed = 2;
           break;
@@ -212,18 +192,6 @@ const Question = (props) => {
         case props.russianlatinalt:
           score++;
           break;
-        case "setscore48":
-          score = score + 48;
-          break;
-        case "setscore38":
-          score = score + 38;
-          break;
-        case "setscore28":
-          score = score + 28;
-          break;
-        case "setscore18":
-          score = score + 18;
-          break;
         default:
           failed = 2;
           break;
@@ -231,9 +199,11 @@ const Question = (props) => {
     }
     rounds++;
     useranswer = response;
+
     if (useranswer === "") {
       useranswer = "nodataentered";
     }
+
     setResponse("");
     percent = (score / rounds) * 100;
     if (rounds >= 50) {

@@ -46,11 +46,10 @@ const AdverbPage = (props) => {
 
   switch (qadverb) {
     case 1:
-      aadverb = Math.floor(Math.random() * 2) + 2;
+      aadverb = 3;
       break;
     case 2:
-      aadverb = 3 - 2 * Math.floor(Math.random() * 2);
-      console.log("aadverb: " + aadverb);
+      aadverb = 3;
       break;
     case 3:
       aadverb = Math.floor(Math.random() * 2) + 1;

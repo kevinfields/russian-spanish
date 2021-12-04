@@ -9,7 +9,9 @@ const HighScoresPage = (props) => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   if (loadedHighScores.length === 0 && rounds === 0) {
-    fetch("https://formsprojec-default-rtdb.firebaseio.com/hiscores.json")
+    fetch(
+      "https://russian-english-a2575-default-rtdb.firebaseio.com//hiscores.json"
+    )
       .then((response) => {
         return response.json();
       })

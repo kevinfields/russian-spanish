@@ -6,7 +6,9 @@ const SuggestionsPage = () => {
   const [loading, setLoading] = useState(false);
   async function loadSuggestions() {
     setLoading(true);
-    await fetch("https://formsprojec-default-rtdb.firebaseio.com/requests.json")
+    await fetch(
+      "https://russian-english-a2575-default-rtdb.firebaseio.com/requests.json"
+    )
       .then((response) => {
         return response.json();
       })

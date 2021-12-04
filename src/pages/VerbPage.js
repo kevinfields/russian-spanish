@@ -49,11 +49,10 @@ const VerbPage = (props) => {
 
   switch (qverb) {
     case 1:
-      averb = Math.floor(Math.random() * 2) + 2;
+      averb = 3;
       break;
     case 2:
-      averb = 3 - 2 * Math.floor(Math.random() * 2);
-      console.log("averb: " + averb);
+      averb = 3;
       break;
     case 3:
       averb = Math.floor(Math.random() * 2) + 1;

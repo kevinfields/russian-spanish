@@ -6,7 +6,7 @@ const SuggestPage = () => {
 
   async function addRequestHandler(requestData) {
     await fetch(
-      "https://formsprojec-default-rtdb.firebaseio.com/requests.json",
+      "https://russian-english-a2575-default-rtdb.firebaseio.com/requests.json",
       {
         method: "POST",
         body: JSON.stringify(requestData),
